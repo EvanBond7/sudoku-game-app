@@ -3,7 +3,7 @@ export const theme = {
     background: 'radial-gradient(#282c34cc, #282c34)',
     black: '#282c34',
     blue: '#a0e9fd',
-    lightBLue: '#caf3fe',
+    lightBlue: '#caf3fe',
     white: 'white',
   },
 
