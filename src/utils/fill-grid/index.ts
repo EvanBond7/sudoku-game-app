@@ -1,4 +1,4 @@
-import { isInRow, shuffle, isInCol } from '..';
+import { isInRow, shuffle, isInCol, detectSquare, isInSquare } from '..';
 import { Grid, Number } from '../../typings';
 
 const gridExample = [
@@ -29,13 +29,15 @@ function fillGrid(grid: Grid) {
       for (let value of numbers) {
         if (!isInRow({ grid, row, value })) {
           if (isInCol({ col, grid, value })) {
-            const square = [
-              [0, 0, 0],
-              [0, 0, 0],
-              [0, 0, 0],
-            ];
+            const square = detectSquare({
+              col,
+              grid,
+              row,
+            });
 
-            grid[row][col] = value;
+            if (!isInSquare({ square, value }))
+              //TODO
+              grid[row][col] = value;
           }
         }
       }
