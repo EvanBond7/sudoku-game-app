@@ -1,10 +1,25 @@
 import React, { FC, Children } from 'react';
+import { Grid } from '../../typings';
+import { fillGrid } from '../../utils';
 
 import Block from './block';
 import { Container, Row } from './styles';
 
-const Grid: FC = () => {
-  // TODO
+const GridApp: FC = () => {
+  const grid: Grid = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ];
+
+  fillGrid(grid);
+  console.log(grid);
 
   return (
     <Container>
@@ -23,4 +38,4 @@ const Grid: FC = () => {
   );
 };
 
-export default Grid;
+export default GridApp;

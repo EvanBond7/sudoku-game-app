@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 
 import { Content, Title, Card, Grid } from './components';
+import GridApp from './components/grid';
 import { unregister } from './core';
 import { GlobalStyle, theme } from './style';
 
@@ -13,7 +14,7 @@ ReactDOM.render(
     <Content>
       <Title>Sudoku App</Title>
       <Card>
-        <Grid />
+        <GridApp />
       </Card>
     </Content>
   </ThemeProvider>,

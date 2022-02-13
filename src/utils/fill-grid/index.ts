@@ -1,4 +1,11 @@
-import { isInRow, shuffle, isInCol, detectSquare, isInSquare } from '..';
+import {
+  isInRow,
+  shuffle,
+  isInCol,
+  detectSquare,
+  isInSquare,
+  checkGrid,
+} from '..';
 import { Grid, Number } from '../../typings';
 
 const gridExample = [
@@ -35,9 +42,14 @@ function fillGrid(grid: Grid) {
               row,
             });
 
-            if (!isInSquare({ square, value }))
-              //TODO
+            if (!isInSquare({ square, value })) {
               grid[row][col] = value;
+              if (checkGrid(grid)) {
+                return true;
+              } else if (fillGrid(grid)) {
+                return true;
+              }
+            }
           }
         }
       }
