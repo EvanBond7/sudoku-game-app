@@ -1,26 +1,13 @@
 import React, { FC, Children } from 'react';
-import { Grid } from '../../typings';
-import { fillGrid } from '../../utils';
+
+import { createFullGrid, fillGrid } from '../../utils';
 
 import Block from './block';
 import { Container, Row } from './styles';
 
-const GridApp: FC = () => {
-  const grid: Grid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ];
-
-  fillGrid(grid);
+const Grid: FC = () => {
+  const grid = createFullGrid();
   console.log(grid);
-
   return (
     <Container>
       {Children.toArray(
@@ -38,4 +25,4 @@ const GridApp: FC = () => {
   );
 };
 
-export default GridApp;
+export default Grid;
