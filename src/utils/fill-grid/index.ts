@@ -29,6 +29,12 @@ function fillGrid(grid: Grid) {
       for (let value of numbers) {
         if (!isInRow({ grid, row, value })) {
           if (isInCol({ col, grid, value })) {
+            const square = [
+              [0, 0, 0],
+              [0, 0, 0],
+              [0, 0, 0],
+            ];
+
             grid[row][col] = value;
           }
         }
