@@ -35,7 +35,7 @@ function fillGrid(grid: Grid) {
 
       for (let value of numbers) {
         if (!isInRow({ grid, row, value })) {
-          if (isInCol({ col, grid, value })) {
+          if (!isInCol({ col, grid, value })) {
             const square = detectSquare({
               col,
               grid,
@@ -53,6 +53,7 @@ function fillGrid(grid: Grid) {
           }
         }
       }
+      break;
     }
   }
 
