@@ -1,22 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 import { Content, Title, Card, Grid } from './components';
 
-import { unregister } from './core';
+import { unregister, configureStore } from './core';
 import { GlobalStyle, theme } from './style';
+
+const store = configureStore();
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
 
-    <Content>
-      <Title>Sudoku App</Title>
-      <Card>
-        <Grid />
-      </Card>
-    </Content>
+    <Provider store={store}>
+      <Content>
+        <Title>Sudoku App</Title>
+        <Card>
+          <Grid />
+        </Card>
+      </Content>
+    </Provider>
   </ThemeProvider>,
   document.getElementById('root')
 );
