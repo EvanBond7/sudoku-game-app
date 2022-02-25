@@ -25,6 +25,7 @@ function solveGrid(grid: Grid) {
               } else if (solveGrid(grid)) return true;
             }
           }
+      break;
     }
   }
 
