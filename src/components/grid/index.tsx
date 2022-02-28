@@ -8,24 +8,27 @@ import {
   selectBlock,
   fillBlock,
 } from '../../core/reducers';
-import { BLOCK_COORD, INDEX, Number, N } from '../../typings';
+import { BLOCK_COORD, INDEX, Number, N, Grid as GRID } from '../../typings';
 
 import Block from './block';
 import { Container, Row } from './styles';
+import { solveGrid } from '../../utils';
 
 interface IState {
   selectedBlock?: BLOCK_COORD;
   selectedValue: N;
+  solvedGrid?: GRID;
 }
 
 const Grid: FC = () => {
   const state = useSelector<IReducer, IState>(
-    ({ selectedBlock, workingGrid }) => ({
+    ({ selectedBlock, workingGrid, solvedGrid }) => ({
       selectedBlock,
       selectedValue:
         workingGrid && selectedBlock
           ? workingGrid[selectedBlock[0]][selectedBlock[1]]
           : 0,
+      solvedGrid,
     })
   );
   const dispatch = useDispatch<Dispatch<AnyAction>>();
@@ -94,8 +97,10 @@ const Grid: FC = () => {
   useMousetrap('up', moveUp);
 
   useEffect(() => {
-    create();
-  }, [create]);
+    if (!state.solvedGrid) {
+      create();
+    }
+  }, [create, solveGrid]);
 
   return (
     <Container>
