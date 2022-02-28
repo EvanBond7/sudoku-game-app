@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { Content, Title, Card, Grid, Numbers, NewButton } from './components';
 
-import { unregister, configureStore } from './core';
+import { register, configureStore } from './core';
 import { GlobalStyle, theme } from './style';
 
 const store = configureStore();
