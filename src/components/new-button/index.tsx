@@ -9,11 +9,11 @@ const NewButton = () => {
   const dispatch = useDispatch<Dispatch<Action>>();
 
   const createNewGrid = useCallback(() => {
-    if (window.confirm('Are you sure you want to start a new game?')) {
+    if (window.confirm('Вы уверены, что хотите начать новую игру?')) {
       dispatch(createGrid());
     }
   }, [dispatch]);
-  return <Button onClick={createNewGrid}>New Game</Button>;
+  return <Button onClick={createNewGrid}>Новая игра</Button>;
 };
 
 export default NewButton;

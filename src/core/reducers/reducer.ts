@@ -31,12 +31,12 @@ function reducer(state = initialState, action: AnyAction): IReducer {
         if (
           state.solvedGrid[action.coords[0]][action.coords[1]] !== action.value
         ) {
-          alert('Incorrect Option!');
+          alert('Недопустимое действие!');
           return state;
         }
         state.workingGrid[action.coords[0]][action.coords[1]] = action.value;
         if (compareArrays(state.workingGrid, state.solvedGrid))
-          alert('Completed!');
+          alert('Игра завершена!');
         return { ...state, workingGrid: [...state.workingGrid] as Grid };
       }
       return state;

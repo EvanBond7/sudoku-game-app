@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         height: 100%;
+        
     }
     body: {
         display: flex;
@@ -18,6 +19,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: sans-serif;
         height:100%;
         justify-content: center;
-        padding: 15px;
+        padding: 140px;
     }
 `;

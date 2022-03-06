@@ -7,6 +7,7 @@ export const Button = styled.button`
     border: 2px solid ${theme.colors.black};
     border-radius: 4px;
     color: ${theme.colors.white};
+    cursor: pointer;
     display: flex;
     flex: 1;
     font-size: 16px;
@@ -14,18 +15,19 @@ export const Button = styled.button`
     height: 40px;
     justify-content: center;
     margin: 4px 2px;
-    min-height: 40px;  
+    min-height: 40px;
     opacity: 0.9;
     padding: 0;
     transition: ${theme.transition};
 
-    &:focus (
+    /* &:focus (
         border-color: ${theme.colors.blue};
         outline: none;
     )
 
     &:hover(
+        
         opacity: 0.6;
-    )
+    ) */
   `}
 `;
